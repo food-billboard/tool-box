@@ -1,0 +1,197 @@
+@import '~antd/es/style/themes/default.less';
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-3 {
+  &:extend(.text-ellipsis-2);
+  -webkit-line-clamp: 3;
+}
+
+// padding
+@size-list: {
+  2: 2px;
+  4: 4px;
+  6: 6px;
+  8: 8px;
+  10: 10px;
+  12: 12px;
+  14: 14px;
+  16: 16px;
+  18: 18px;
+  20: 20px;
+  22: 22px;
+  24: 24px;
+};
+
+each(@size-list, {
+  .p-@{key} {
+    padding: @value;
+  }
+  .p-lr-@{key} {
+    padding: 0 @value;
+  }
+  .p-tb-@{key} {
+    padding: @value 0;
+  }
+  .m-@{key} {
+    margin: @value;
+  }
+  .m-lr-@{key} {
+    margin: 0 @value;
+  }
+  .m-tb-@{key} {
+    margin: @value 0;
+  }
+  .m-l-@{key} {
+    margin-left: @value;
+  }
+  .m-r-@{key} {
+    margin-right: @value;
+  }
+  .m-t-@{key} {
+    margin-top: @value;
+  }
+  .m-b-@{key} {
+    margin-bottom: @value;
+  }
+  .border-r-@{key} {
+    border-radius: @value;
+  }
+  
+});
+
+@border-size-list: {
+  1: 1px;
+  2: 2px;
+  3: 3px;
+  4: 4px;
+};
+
+each(@border-size-list, {
+  .border-@{key} {
+    border: @value solid @border-color-base;
+  }
+  .border-@{key}-a {
+    border: @value solid @primary-color;
+  }
+  .p-tb-@{key} {
+    padding: @value 0;
+  }
+  
+});
+
+// box-sizing
+.box-sizing-border {
+  box-sizing: border-box;
+}
+
+// cursor
+.c-po {
+  cursor: pointer;
+}
+.c-def {
+  cursor: default;
+}
+.c-n-a {
+  cursor: not-allowed;
+}
+
+// width
+.w-100 {
+  width: 100%;
+}
+
+.w-100-vw {
+  width: 100vw;
+}
+
+.h-100 {
+  height: 100%;
+}
+.h-a {
+  height: auto;
+}
+
+.h-100-vh {
+  height: 100vh;
+}
+
+// line-height
+.line-height-2 {
+  line-height: 2;
+}
+
+// display flex
+.dis-flex {
+  display: flex;
+}
+
+// display inline-block
+.dis-in-b {
+  display: inline-block;
+}
+
+.dis-flex-column {
+  &:extend(.dis-flex);
+  flex-direction: column;
+}
+
+.dis-flex-column-between {
+  &:extend(.dis-flex-column);
+  justify-content: space-between;
+}
+
+// position
+.pos-ab {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pos-re {
+  position: relative;
+}
+
+.pos-sti {
+  position: sticky;
+}
+
+.pos-sti-t {
+  &:extend(.pos-sti);
+  top: 0;
+}
+
+.pos-sti-l {
+  &:extend(.pos-sti);
+  left: 0;
+}
+
+// action icon
+.ac-i-size-m {
+  font-size: 20px;
+}
+
+// text-align
+.ali-cen {
+  text-align: center;
+}
+
+.ali-r {
+  text-align: right;
+}
+
+.p-cor {
+  color: @primary-color;
+}

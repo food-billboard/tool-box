@@ -1,3 +1,4 @@
+
 export default [
   {
     path: '/',
@@ -8,11 +9,11 @@ export default [
     path: '/home',
     component: './Home',
   },
-  // {
-  //   name: '权限演示',
-  //   path: '/access',
-  //   component: './Access',
-  // },
+  {
+    name: '图片压缩',
+    path: '/image-compress',
+    component: './ImageCompress',
+  },
   // {
   //     name: ' CRUD 示例',
   //     path: '/table',
