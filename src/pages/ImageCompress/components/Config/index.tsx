@@ -1,4 +1,6 @@
-import { forwardRef, useImperativeHandle } from 'react'
+import { forwardRef, useCallback, useImperativeHandle, useState } from 'react'
+import { Form, InputNumber } from 'antd'
+import { merge } from 'lodash'
 
 export type ConfigType = {
   quality: number 
@@ -12,12 +14,39 @@ const Config = forwardRef<ConfigRef, {
   onChange?: (config: ConfigType) => void 
 }>((props, ref) => {
 
-  const {  } = props 
+  const { onChange } = props 
+  const [ config, setConfig ] = useState<ConfigType>({ quality: 0.8 })
+  const [form] = Form.useForm()
+
+  const onConfigChange = useCallback((changeValue: any, values: any) => {
+    setConfig(prev => {
+      const newConfig = merge({}, prev, changeValue)
+      onChange?.(newConfig)
+      return newConfig
+    })
+  }, [onChange])
+
+  useImperativeHandle(ref, () => {
+    return {
+      config
+    }
+  }, [config])
 
   return (
-    <div>
-
-    </div>
+    <Form
+      wrapperCol={{ span: 14 }}
+      layout={'horizontal'}
+      form={form}
+      initialValues={{
+        quality: 0.8 
+      }}
+      onValuesChange={onConfigChange}
+      className='m-tb-8'
+    >
+      <Form.Item label="压缩质量" name='quality'>
+        <InputNumber />
+      </Form.Item>
+    </Form>
   )
 
 })
