@@ -7,4 +7,5 @@ export type ImageCompressData = {
   compressFile: File | null 
   prevSize: number 
   compressSize: number 
+  status: 'dealing' | 'done' | 'error'
 }

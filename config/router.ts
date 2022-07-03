@@ -8,11 +8,13 @@ export default [
     name: '首页',
     path: '/home',
     component: './Home',
+    icon: 'home'
   },
   {
     name: '图片压缩',
     path: '/image-compress',
     component: './ImageCompress',
+    icon: 'picture'
   },
   // {
   //     name: ' CRUD 示例',
