@@ -1,0 +1,39 @@
+@import '~antd/es/style/themes/default.less';
+
+.file-md5 {
+  min-height: 100%;
+  & p {
+    margin: 0;
+  }
+  &-drag-icon {
+    margin-bottom: 20px;
+    :global {
+      .anticon {
+        font-size: 48px;
+      }
+    }
+  }
+  &-text {
+    margin: 0 0 4px;
+    color: #000000d9;
+    font-size: 16px;
+  }
+  &-result {
+    margin-top: 1em;
+    :global {
+      .ant-typography {
+        color: @success-color;
+        font-weight: bold;
+      }
+    }
+  }
+  &-action-list {
+    margin-bottom: 8px;
+    &-item {
+      min-width: 100px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}

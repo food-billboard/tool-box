@@ -16,6 +16,12 @@ export default [
     component: './ImageCompress',
     icon: 'picture'
   },
+  {
+    name: '文件MD5计算',
+    path: '/file-md5',
+    component: './FileMD5',
+    icon: 'file'
+  },
   // {
   //     name: ' CRUD 示例',
   //     path: '/table',
