@@ -22,6 +22,12 @@ export default [
     component: './FileMD5',
     icon: 'file'
   },
+  {
+    name: '图片主题色',
+    path: '/image-color',
+    component: './ImageColor',
+    icon: 'icon-color'
+  },
   // {
   //     name: ' CRUD 示例',
   //     path: '/table',

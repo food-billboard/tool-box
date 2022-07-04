@@ -26,5 +26,6 @@ export default defineConfig({
   routes: router,
   npmClient: 'pnpm',
   proxy: (proxy as any)[REACT_APP_ENV || 'prod'],
+  // iconFontUrl: ''
 });
 
