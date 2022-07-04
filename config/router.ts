@@ -28,6 +28,12 @@ export default [
     component: './ImageColor',
     icon: 'icon-color'
   },
+  {
+    name: '颜色格式转换',
+    path: '/color-exchange',
+    component: './ColorExchange',
+    icon: 'bg-colors'
+  },
   // {
   //     name: ' CRUD 示例',
   //     path: '/table',

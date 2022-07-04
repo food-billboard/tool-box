@@ -13,6 +13,13 @@ export const FILE_MD5_LINK_LIST = [
   }
 ]
 
+export const COLOR_EXCHANGE_LINK_LIST = [
+  {
+    title: '颜色对照表',
+    url: 'https://www.sioe.cn/yingyong/yanse-rgb-16/'
+  }
+]
+
 export const IMAGE_COLOR_LINK_LIST = [
   {
     title: '工具官网Demo',
