@@ -32,7 +32,7 @@ export default [
     name: '颜色格式转换',
     path: '/color-exchange',
     component: './ColorExchange',
-    icon: 'bg-colors'
+    icon: 'colors'
   },
   // {
   //     name: ' CRUD 示例',

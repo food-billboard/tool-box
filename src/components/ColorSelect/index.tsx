@@ -1,13 +1,18 @@
-import { useMemo } from 'react'
+import { CSSProperties, useMemo } from 'react'
 import { SketchPicker } from 'react-color'
 import type { Color } from 'react-color'
-import { Tooltip, Button } from 'antd'
+import { Popover, Button } from 'antd'
 import { useControllableValue } from 'ahooks'
+import styles from './index.less'
 
 const ColorSelect = (props: {
   value?: Color 
   onChange?: (value: Color) => void 
+  className?: string 
+  style?: CSSProperties
 }) => {
+
+  const { className, style } = props 
 
   const [ value, setValue ] = useControllableValue(props)
 
@@ -24,13 +29,18 @@ const ColorSelect = (props: {
   
 
   return (
-    <Tooltip
-      title={colorSelect}
+    <Popover
+      content={colorSelect}
+      trigger='click'
+      overlayClassName={styles['component-color-select-tooltip']}
     >
-      <Button>
+      <Button
+        className={className}
+        style={style}
+      >
         选择颜色
       </Button>
-    </Tooltip>
+    </Popover>
   )
 
 }
