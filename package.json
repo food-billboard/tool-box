@@ -19,6 +19,7 @@
     "compressorjs": "^1.1.1",
     "cross-env": "^7.0.3",
     "file-saver": "^2.0.5",
+    "gifshot": "^0.4.5",
     "jszip": "^3.10.0",
     "lodash": "^4.17.21",
     "react-color": "^2.19.3",

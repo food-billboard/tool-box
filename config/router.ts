@@ -32,7 +32,13 @@ export default [
     name: '颜色格式转换',
     path: '/color-exchange',
     component: './ColorExchange',
-    icon: 'colors'
+    icon: 'bgColors'
+  },
+  {
+    name: '视频转GIF',
+    path: '/video-gif',
+    component: './VideoGif',
+    icon: 'gif'
   },
   // {
   //     name: ' CRUD 示例',

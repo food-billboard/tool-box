@@ -1,4 +1,6 @@
 import {  } from 'react'
+import { Space } from 'antd'
+import classnames from 'classnames'
 import styles from './index.less'
 
 export type LinkValue = {
@@ -14,25 +16,25 @@ const LinkList = (props: {
 
   return (
     <div
-      className={styles['component-link-list']}
+      className={classnames(styles['component-link-list'], 'm-b-4')}
     >
       <h4>优先使用轮子😊</h4>
-      <ul
+      <Space
          className={styles['component-link-list-content']}
       >
         {
           value.map(item => {
             return (
-              <li
+              <div
                 className="text-ellipsis"
                 key={item.url}
               >
                 <a target="_blank" href={item.url} title={item.title}>{item.title}</a>
-              </li>
+              </div>
             )
           })
         }
-      </ul>
+      </Space>
     </div>
   )
 

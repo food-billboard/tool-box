@@ -26,3 +26,14 @@ export const IMAGE_COLOR_LINK_LIST = [
     url: 'https://lokeshdhakar.com/projects/color-thief/#'
   }
 ]
+
+export const VIDEO_GIF_LINK_LIST = [
+  {
+    title: '图贴士',
+    url: 'https://www.tutieshi.com/video/'
+  },
+  {
+    title: 'ezgif',
+    url: 'https://ezgif.com/video-to-gif'
+  }
+]

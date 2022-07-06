@@ -19,6 +19,7 @@ specifiers:
   compressorjs: ^1.1.1
   cross-env: ^7.0.3
   file-saver: ^2.0.5
+  gifshot: ^0.4.5
   jszip: ^3.10.0
   lodash: ^4.17.21
   prettier: ^2
@@ -40,6 +41,7 @@ dependencies:
   compressorjs: 1.1.1
   cross-env: 7.0.3
   file-saver: 2.0.5
+  gifshot: 0.4.5
   jszip: 3.10.0
   lodash: 4.17.21
   react-color: 2.19.3
@@ -4535,6 +4537,10 @@ packages:
       assert-plus: 1.0.0
     dev: false
 
+  /gifshot/0.4.5:
+    resolution: {integrity: sha512-oaOTT7patjxFFv7ptR0R0NNhqy3ZAmcLUQCjM/sTsvsQaUAlB2fHirLajcNAKJ6ufoVhdP+ZkXYvmUycHP1FNg==}
+    dev: false
+
   /git-hooks-list/1.0.3:
     resolution: {integrity: sha512-Y7wLWcrLUXwk2noSka166byGCvhMtDRpgHdzCno1UQv/n/Hegp++a2xBWJL1lJarnKD3SWaljD+0z1ztqxuKyQ==}
 
@@ -8998,7 +9004,7 @@ packages:
     dev: false
 
   github.com/lokesh/quantize/f572abd2646b5944852535c8a26fdb958a5d7c4b:
-    resolution: {tarball: https://codeload.github.com/lokesh/quantize/tar.gz/f572abd2646b5944852535c8a26fdb958a5d7c4b}
+    resolution: {commit: f572abd2646b5944852535c8a26fdb958a5d7c4b, repo: git+ssh://git@github.com/lokesh/quantize.git, type: git}
     name: quantize
     version: 1.2.0
     dev: false
