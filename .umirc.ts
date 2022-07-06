@@ -1,10 +1,11 @@
 import { defineConfig } from '@umijs/max';
+import { merge } from 'lodash'
 import router from './config/router'
 import proxy from './config/proxy';
 
 const { REACT_APP_ENV } = process.env;
 
-export default defineConfig({
+const commonConfig = {
   antd: {
     // configProvider
     configProvider: {},
@@ -27,5 +28,26 @@ export default defineConfig({
   npmClient: 'pnpm',
   proxy: (proxy as any)[REACT_APP_ENV || 'prod'],
   // iconFontUrl: ''
+}
+
+
+const developmentConfig: any = merge({}, commonConfig, {
+  define: {
+    'process.env.REACT_APP_ENV': 'dev',
+  },
 });
+
+const productionConfig: any = merge({}, commonConfig, {
+  define: {
+    'process.env.REACT_APP_ENV': 'prod',
+  },
+  //-----打包配置
+  // base: '/api/backend/screen/',
+  base: '/',
+  publicPath: '/api/backend/tool-box/',
+});
+
+export default defineConfig(
+  REACT_APP_ENV === 'prod' ? productionConfig : developmentConfig,
+);
 
