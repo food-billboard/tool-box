@@ -5,7 +5,7 @@ import type { RcFile } from 'antd/es/upload/interface'
 import { useCallback, useState, useRef } from 'react';
 import classnames from 'classnames'
 // @ts-ignore
-import ColorThief from 'colorthief'
+import ColorThief from '@/utils/lib/color-thief'
 import Color from 'color'
 import LinkList from '@/components/LinkList'
 import { IMAGE_COLOR_LINK_LIST  } from '@/utils/Constants/LinkList'
@@ -20,6 +20,7 @@ export default () => {
 
   const [ colorList, setColorList ] = useState<[number, number, number][]>([])
   const [ loading, setLoading ] = useState<boolean>(false)
+  const [ blobUrl, setBlobUrl ] = useState<string>('')
 
   const configRef = useRef<ConfigRef>(null)
   const colorThief = useRef<any>(new ColorThief())
@@ -27,15 +28,16 @@ export default () => {
   const onChange = useCallback(async (file: RcFile, fileList: RcFile[]) => {
     setLoading(true)
 
-    let blobUrl: string = ''
+    !!blobUrl && URL.revokeObjectURL(blobUrl)
 
     try {
-      const blobUrl = URL.createObjectURL(file)
+      const newBlobUrl = URL.createObjectURL(file)
+      setBlobUrl(newBlobUrl)
       const image = new Image()
       await new Promise((resolve, reject) => {
         image.onload = resolve 
         image.onerror = reject
-        image.src = blobUrl
+        image.src = newBlobUrl
       })
       const { counter=5 } = configRef.current?.config || {}
       const mainColor = await colorThief.current.getColor(image)
@@ -47,12 +49,11 @@ export default () => {
     }catch(err) {
       message.info('获取颜色失败')
     }finally {
-      !!blobUrl && URL.revokeObjectURL(blobUrl)
       setLoading(false)
     }
 
     return false 
-  }, [])
+  }, [blobUrl])
 
   return (
     <PageContainer
@@ -103,6 +104,15 @@ export default () => {
           })
         }
       </Space>
+      {
+        !!blobUrl && (
+          <img
+            src={blobUrl}
+            width='100%'
+            className='m-b-8'
+          />
+        )
+      }
     </PageContainer>
   );
 };
