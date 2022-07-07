@@ -17,12 +17,21 @@ const commonConfig = {
     // less or css, default less
     style: 'less',
   },
+  manifest: {
+    basePath: '/',
+  },
+  history: {
+    type: 'hash',
+  },
+  alias: {
+
+  },
   access: {},
   model: {},
   initialState: {},
   request: {},
   layout: {
-    title: '@umijs/max',
+    title: '工具箱',
   },
   routes: router,
   npmClient: 'pnpm',
@@ -42,7 +51,6 @@ const productionConfig: any = merge({}, commonConfig, {
     'process.env.REACT_APP_ENV': 'prod',
   },
   //-----打包配置
-  // base: '/api/backend/screen/',
   base: '/',
   publicPath: '/api/backend/tool-box/',
 });
