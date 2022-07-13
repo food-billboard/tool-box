@@ -1,9 +1,10 @@
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react'
-import { Form, InputNumber } from 'antd'
+import { Form, Radio, Switch } from 'antd'
 import { merge } from 'lodash'
 
 export type ConfigType = {
-  counter: number 
+  orientation: 'p' | 'l' 
+  compressPdf: boolean 
 }
 
 export type ConfigRef = {
@@ -15,7 +16,10 @@ const Config = forwardRef<ConfigRef, {
 }>((props, ref) => {
 
   const { onChange } = props 
-  const [ config, setConfig ] = useState<ConfigType>({ counter: 5 })
+  const [ config, setConfig ] = useState<ConfigType>({ 
+    orientation: 'p',
+    compressPdf: false 
+  })
   const [form] = Form.useForm()
 
   const onConfigChange = useCallback((changeValue: any, values: any) => {
@@ -38,13 +42,28 @@ const Config = forwardRef<ConfigRef, {
       layout={'horizontal'}
       form={form}
       initialValues={{
-        counter: 5
+        orientation: 'p',
+        compressPdf: false 
       }}
       onValuesChange={onConfigChange}
       className='m-tb-8'
     >
-      <Form.Item label="相近颜色获取数量" name='counter'>
-        <InputNumber />
+      <Form.Item label="pdf方向" name='orientation'>
+        <Radio.Group 
+          options={[
+            {
+              label: '竖直',
+              value: 'p'
+            },
+            {
+              label: '水平',
+              value: 'l'
+            }
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="是否压缩" name='compressPdf'>
+        <Switch />
       </Form.Item>
     </Form>
   )
