@@ -37,3 +37,18 @@ export const VIDEO_GIF_LINK_LIST = [
     url: 'https://ezgif.com/video-to-gif'
   }
 ]
+
+export const IMAGE_PDF_LINk_LIST = [
+  {
+    title: 'PDF转换器',
+    url: 'http://www.pdfdo.com/image-to-pdf.aspx'
+  },
+  {
+    title: '迅捷PDF转换器',
+    url: 'https://app.xunjiepdf.com/jpg2pdf/'
+  },
+  {
+    title: 'smallPdf',
+    url: 'https://smallpdf.com/cn/jpg-to-pdf'
+  }
+]
