@@ -40,6 +40,12 @@ export default [
     component: './VideoGif',
     icon: 'gif'
   },
+  {
+    name: '图片转PDF',
+    path: '/image-pdf',
+    component: './ImagePdf',
+    icon: 'filePdf'
+  },
   // {
   //     name: ' CRUD 示例',
   //     path: '/table',
