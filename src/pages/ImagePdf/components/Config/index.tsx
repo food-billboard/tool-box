@@ -62,7 +62,7 @@ const Config = forwardRef<ConfigRef, {
           ]}
         />
       </Form.Item>
-      <Form.Item label="是否压缩" name='compressPdf'>
+      <Form.Item label="是否压缩" name='compressPdf' valuePropName='checked' >
         <Switch />
       </Form.Item>
     </Form>
