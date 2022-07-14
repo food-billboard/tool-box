@@ -100,8 +100,9 @@ const ImagePdf = () => {
     try {
       const pdf = new jsPDF(orientation, 'pt', 'a4', compressPdf)
       const imageData = await getImageData(fileList)
+      const length = imageData.length
 
-      imageData.forEach((image) => {
+      imageData.forEach((image, index) => {
 
         const { width, height, mime, image: data, file } = image 
         const realType = Mime.getExtension(mime)?.toUpperCase() || ""
@@ -121,10 +122,14 @@ const ImagePdf = () => {
             position -= 841.89
 				    //避免添加空白页
 				    if (leftHeight > 0) {
-				        pdf.addPage()
+				      pdf.addPage()
 				    }
           }
           
+        }
+
+        if(index + 1 < length) {
+          pdf.addPage()
         }
 
       })
