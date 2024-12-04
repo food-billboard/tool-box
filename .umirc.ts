@@ -34,7 +34,6 @@ const commonConfig = {
     title: '工具箱',
   },
   routes: router,
-  npmClient: 'pnpm',
   proxy: (proxy as any)[REACT_APP_ENV || 'prod'],
   // iconFontUrl: ''
 }

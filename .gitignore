@@ -10,3 +10,5 @@
 /dist
 /.mfsu
 /.history 
+.DS_Store
+.env
